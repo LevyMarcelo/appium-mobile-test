@@ -23,16 +23,16 @@ public class BaseTest {
     @BeforeTest(alwaysRun = true)
     @Parameters({"platform", "bundleId", "device", "udid", "app", "url"})
     public void beforeClass(String platform,
-                               @Optional("bundleId") String bundleId,
-                               @Optional("device") String device,
-                               @Optional("udid") String udid,
-                               @Optional("app") String app,
-                               @Optional("url") String url) {
+                            @Optional("bundleId") String bundleId,
+                            @Optional("device") String device,
+                            @Optional("udid") String udid,
+                            @Optional("app") String app,
+                            @Optional("url") String url) {
 
-        if(platform.equalsIgnoreCase("iosSimulator")) {
-            desiredCapabilitiesiOS(bundleId, device, udid, url);
+        if(platform.equalsIgnoreCase("ios")) {
+            desiredCapabilitiesiOS(bundleId, device, url);
         } else {
-            desiredCapabilitiesAndroid(app, udid, device, url);
+            desiredCapabilitiesAndroid(udid, app, url);
         }
     }
 
@@ -41,10 +41,9 @@ public class BaseTest {
         driver.quit();
     }
 
-    private void desiredCapabilitiesiOS(String bundleId, String device, String udid, String url) {
+    private void desiredCapabilitiesiOS(String bundleId, String device, String url) {
         this.desiredCapabilities.setCapability(IOSMobileCapabilityType.BUNDLE_ID, bundleId);
         this.desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, device);
-        this.desiredCapabilities.setCapability(MobileCapabilityType.UDID, udid);
         this.desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.IOS_XCUI_TEST);
 
         try {
@@ -54,13 +53,9 @@ public class BaseTest {
         }
     }
 
-    private void desiredCapabilitiesAndroid(String app, String udid, String device, String url) {
-        this.desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, app);
+    private void desiredCapabilitiesAndroid(String udid, String app, String url) {
         this.desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, udid);
-        this.desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, device);
-        this.desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.ANDROID_UIAUTOMATOR2);
-        this.desiredCapabilities.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS, true);
-        this.desiredCapabilities.setCapability(AndroidMobileCapabilityType.DISABLE_ANDROID_WATCHERS, true);
+        this.desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, app);
 
         try {
             driver = new AndroidDriver(new URL(url), desiredCapabilities);
