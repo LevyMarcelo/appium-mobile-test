@@ -25,7 +25,7 @@ public class Utils {
     }
 
     public static boolean isAndroid() {
-        return (driver instanceof AndroidDriver || driver.getAutomationName().equalsIgnoreCase("UIAutomator2")); 
+        return (driver instanceof AndroidDriver);
     }
 
     public void waitForElement(MobileElement element) {
