@@ -2,7 +2,6 @@ package br.com.appium.tests;
 
 import br.com.appium.screens.PersonalDataScreen;
 import org.testng.annotations.Test;
-import static br.com.appium.utils.Utils.isAndroid;
 
 public class PersonalDataTest extends BaseTest {
 

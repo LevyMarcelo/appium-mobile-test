@@ -23,11 +23,7 @@ public class Utils {
                 .ignoring(NoSuchElementException.class, StaleElementReferenceException.class)
                 .ignoring(TimeoutException.class);
     }
-
-    public static boolean isAndroid() {
-        return (driver instanceof AndroidDriver);
-    }
-
+    
     public void waitForElement(MobileElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
