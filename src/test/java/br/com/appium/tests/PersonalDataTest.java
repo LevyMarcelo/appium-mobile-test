@@ -12,9 +12,9 @@ public class PersonalDataTest extends BaseTest {
 
         if(isAndroid()) {
             personalDataScreen.clickOnboardingStartbutton();
-            personalDataScreen.fillFullNameField();
+            personalDataScreen.fillFullNameField("Levy Cunha");
         } else {
-            personalDataScreen.fillFullNameField();
+            personalDataScreen.fillFullNameField("Levy Cunha");
         }
     }
 }

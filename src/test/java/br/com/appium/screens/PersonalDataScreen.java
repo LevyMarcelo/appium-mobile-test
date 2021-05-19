@@ -28,7 +28,7 @@ public class PersonalDataScreen extends Utils {
         click(onboardingStartbutton);
     }
 
-    public void fillFullNameField() {
-        write(fullNameField, "Levy Cunha");
+    public void fillFullNameField(String fullName) {
+        write(fullNameField, fullName);
     }
 }
