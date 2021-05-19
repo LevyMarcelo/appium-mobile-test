@@ -10,11 +10,7 @@ public class PersonalDataTest extends BaseTest {
     public void personalDataTest() {
         PersonalDataScreen personalDataScreen = new PersonalDataScreen(driver);
 
-        if(isAndroid()) {
-            personalDataScreen.clickOnboardingStartbutton();
-            personalDataScreen.fillFullNameField("Levy Cunha");
-        } else {
-            personalDataScreen.fillFullNameField("Levy Cunha");
-        }
+        personalDataScreen.clickOnboardingStartButton();
+        personalDataScreen.fillFullNameField("Levy Cunha");
     }
 }

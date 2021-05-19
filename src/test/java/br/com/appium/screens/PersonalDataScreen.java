@@ -18,14 +18,15 @@ public class PersonalDataScreen extends Utils {
     }
 
     @AndroidFindBy(id = AndroidLocators.ONBOARDING_START_BUTTON)
-    protected MobileElement onboardingStartbutton;
+    @iOSXCUITFindBy(iOSClassChain = IOSLocators.ONBOARDING_START_BUTTON)
+    protected MobileElement onboardingStartButton;
 
     @AndroidFindBy(xpath = AndroidLocators.FULL_NAME_FIELD)
     @iOSXCUITFindBy(iOSClassChain = IOSLocators.FULL_NAME_FIELD)
     protected MobileElement fullNameField;
 
-    public void clickOnboardingStartbutton() {
-        click(onboardingStartbutton);
+    public void clickOnboardingStartButton() {
+        click(onboardingStartButton);
     }
 
     public void fillFullNameField(String fullName) {
