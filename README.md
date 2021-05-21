@@ -5,6 +5,7 @@
 * TestNG
 * Appium
 * Gradle
+* Hamcrest
 
 ### Project execution with IDE (IntelliJ):
 * Direct button in the desired suite > Run (src/test/resources/suites)

@@ -2,7 +2,9 @@ package br.com.appium.utils;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
@@ -23,7 +25,7 @@ public class Utils {
                 .ignoring(NoSuchElementException.class, StaleElementReferenceException.class)
                 .ignoring(TimeoutException.class);
     }
-    
+
     public void waitForElement(MobileElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
@@ -36,5 +38,25 @@ public class Utils {
     public void write(MobileElement element, String value) {
         waitForElement(element);
         element.sendKeys(value);
+    }
+
+    public static boolean isAndroid() {
+        return (driver instanceof AndroidDriver);
+    }
+
+    public static void hideKeyboard() {
+        driver.hideKeyboard();
+    }
+
+    public static void verticalSwipe(int amount) {
+        TouchAction touchAction = new TouchAction(driver);
+        for(int i = 0; i <= amount; i++) {
+            int centerY = (driver.manage().window().getSize().height)/2;
+            int centerX = (driver.manage().window().getSize().width)/2;
+            touchAction.longPress(PointOption.point(centerX, centerY))
+                    .moveTo(PointOption.point(0, centerY/2))
+                    .release()
+                    .perform();
+        }
     }
 }

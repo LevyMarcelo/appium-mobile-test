@@ -29,7 +29,7 @@ public class BaseTest {
                             @Optional("app") String app,
                             @Optional("url") String url) {
 
-        if(platform.equalsIgnoreCase("ios")) {
+        if(platform.equalsIgnoreCase("iOS")) {
             desiredCapabilitiesiOS(bundleId, device, url);
         } else {
             desiredCapabilitiesAndroid(udid, app, url);

@@ -2,8 +2,8 @@
 <suite name="Suite Test parallel" parallel="tests" thread-count="2">
     <test name="Test execution Android">
         <parameter name="platform" value="android"/>
-        <parameter name="udid" value="br.com..."/>
-        <parameter name="app" value="br.com..."/>
+        <parameter name="udid" value="br.com.APPIUM_MOBILE_TEST.associacao.onboardinglibrary"/>
+        <parameter name="app" value="br.com.APPIUM_MOBILE_TEST.associacao.onboardinglibrary.MainActivity"/>
         <parameter name="url" value="http://localhost:4723/wd/hub"/>
         <classes>
             <class name="br.com.appium.tests.PersonalDataTest" />
@@ -11,7 +11,7 @@
     </test>
     <test name="Test execution iOS">
         <parameter name="platform" value="ios"/>
-        <parameter name="bundleId" value="br.com..."/>
+        <parameter name="bundleId" value="br.com.APPIUM_MOBILE_TEST.onboarding.demo"/>
         <parameter name="device" value="iPhone 11 Pro Max"/>
         <parameter name="url" value="http://localhost:4723/wd/hub"/>
         <classes>
