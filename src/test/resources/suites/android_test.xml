@@ -2,8 +2,8 @@
 <suite name="Suite Test Android">
     <test name="Test execution Android">
         <parameter name="platform" value="android"/>
-        <parameter name="udid" value="br.com..."/>
-        <parameter name="app" value="br.com..."/>
+        <parameter name="udid" value="br.com.APPIUM_MOBILE_TEST.associacao.onboardinglibrary"/>
+        <parameter name="app" value="br.com.APPIUM_MOBILE_TEST.associacao.onboardinglibrary.MainActivity"/>
         <parameter name="url" value="http://localhost:4723/wd/hub"/>
         <classes>
             <class name="br.com.appium.tests.PersonalDataTest" />

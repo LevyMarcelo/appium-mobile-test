@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Suite Test iOS">
     <test name="Test execution iOS">
-        <parameter name="platform" value="ios"/>
-        <parameter name="bundleId" value="br.com..."/>
+        <parameter name="platform" value="iOS"/>
+        <parameter name="bundleId" value="br.com.APPIUM_MOBILE_TEST.onboarding.demo"/>
         <parameter name="device" value="iPhone 11 Pro Max"/>
         <parameter name="url" value="http://localhost:4723/wd/hub"/>
         <classes>
