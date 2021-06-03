@@ -1,4 +1,4 @@
-# Appium Mobile Test (Android e iOS)
+# Appium Mobile Test
 
 ### Language and Frameworks:
 * Java
