@@ -56,6 +56,7 @@ public class BaseTest {
     private void desiredCapabilitiesAndroid(String udid, String app, String url) {
         this.desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, udid);
         this.desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, app);
+        this.desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.ANDROID_UIAUTOMATOR2);
 
         try {
             driver = new AndroidDriver(new URL(url), desiredCapabilities);
