@@ -14,3 +14,8 @@
 * gradle test -Psuite=ios_test
 * gradle test -Psuite=android_test
 * gradle test -Psuite=parallel_tests
+
+### Pre-conditions:
+* Setup: Node.js, Appium Server, Java JDK and archive "bash_profile" configured (macOS)
+* Android Emulator (Android Studio)
+* iOS Simulator (Xcode)
