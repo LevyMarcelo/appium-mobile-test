@@ -2,7 +2,7 @@
 
 ## 1. Visão geral do projeto
 
-Este repositório apresenta um projeto de automação de testes mobile utilizando Appium e Java, com foco nas plataformas Android e iOS.
+Projeto de automação de testes mobile com Appium e Java, aplicando práticas de organização e reutilização de componentes, além de validação funcional em dispositivos Android e iOS.
 
 ## 2. Objetivos
 
